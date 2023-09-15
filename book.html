@@ -4,10 +4,86 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="../style.css">
+
     <title>{{ .Title }}</title>
   </head>
 
   <body>
-    {{ .Blurb }}
+    <header class="book-header">
+      <h1 class="book-header-heading">{{ .Title }}</h1>
+    </header>
+
+    <main class="book-main">
+      <aside class="book-main-aside">
+        {{ with .CoverPath -}}
+        <img class="book-main-aside-cover" src="{{ . }}" alt="Cover for {{ $.Title }}">
+        {{- else -}}
+        <img class="book-main-aside-cover" src="../theme/cover-placeholder.png" alt="Cover for {{ $.Title }}">
+        {{- end }}
+
+        {{ with .ShortDescription -}}
+        <p class="book-main-aside-desc">{{ . }}</p>
+        {{- end }}
+
+        {{ with .Author -}}
+        <section class="book-main-aside-section book-main-aside-section--author">
+          {{ with .Name -}}
+          <h3 class="book-main-aside-section-author-heading">
+            Author:
+            <span class="book-main-aside-section-author-heading-name">{{ . }}</span>
+          </h3>
+          {{- end }}
+
+          {{ with .Bio -}}
+          <p class="book-main-aside-section-author-bio">{{ . }}</p>
+          {{- end }}
+        </section>
+        {{- end }}
+      </aside>
+
+      <section class="book-main-content">
+        <section class="book-main-content-section book-main-content-section--blurb">
+          <h2 class="book-main-content-section-heading">About</h2>
+          {{ .Blurb }}
+        </section>
+
+        <nav class="book-main-content-section book-main-content-section--nav">
+          <ol class="book-main-content-section-nav">
+            {{ range .Chapters -}}
+            <li class="book-main-content-section-nav-item">
+              <h3 class="book-main-content-section-nav-item-heading">
+                <a class="book-main-content-section-nav-item-heading-link"
+                   href="{{ .SlugHTML }}">
+                  {{ .Title }}
+                </a>
+              </h3>
+
+              {{ if not (and .Published.IsZero .LastModified.IsZero) }}
+              <ul class="book-main-content-section-nav-item-stats">
+                {{ if not .Published.IsZero -}}
+                <li class="book-main-content-section-nav-item-stats-item book-main-content-section-nav-item-stats-item--published">
+                  {{ .Published.Format "Jan 2, 2006 @ 3:04 PM (PST)" }}
+                </li>
+                {{- end }}
+
+                {{ if not .LastModified.IsZero -}}
+                <li class="book-main-content-section-nav-item-stats-item book-main-content-section-nav-item-stats-item--lastmod">
+                  Last Modified
+                  {{ .LastModified.Format "Jan 2, 2006 @ 3:04 PM" }}
+                </li>
+                {{- end }}
+              </ul>
+              {{- end }}
+
+              {{ with .Description -}}
+              <p class="book-main-content-section-nav-item-desc">{{ . }}</p>
+              {{- end }}
+            </li>
+            {{- end }}
+          </ol>
+        </nav>
+      </section>
+    </main>
   </body>
 </html>

@@ -1,16 +1,24 @@
 :root {
+    --breakpoint-xs: 28rem;
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
     --breakpoint-lg: 64rem;
     --font-stack-serif: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
     --font-stack-sans-serif: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-
+    --link-fg: #0969da;
+    --link-fg--hover: #531ab6;
     --font-family: var(--font-stack-sans-serif);
     --index-header-bg: #f6f8fa;
     --index-header-border-color: #999;
     --index-main-books-item-border-color: #999;
-    --index-main-books-item-link-fg: #0969da;
-    --index-main-books-item-link-fg--hover: #531ab6;
+    --index-main-books-item-link-fg: var(--link-fg);
+    --index-main-books-item-link-fg--hover: var(link-fg--hover);
     --index-main-books-item-genre-border-color: #999;
+    --book-header-bg: #f6f8fa;
+    --book-header-border-color: #999;
+    --book-main-aside-section--author-border-color: #999;
+    --book-main-content-section-nav-item-
 }
 
 *, *::before, *::after {
@@ -19,8 +27,23 @@
 
 body {
     font-family: var(--font-family);
+    font-size: 1rem;
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    margin: 0.65rem 0;
+}
+
+a {
+    color: var(--link-fg);
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--link-fg--hover);
 }
 
 .global-font-stack-serif {
@@ -100,4 +123,181 @@ body {
     border: 0.0625em solid var(--index-main-books-item-genre-border-color);
     padding: 0.25em;
     border-radius: 0.25em;
+}
+
+.book-header {
+    background: var(--book-header-bg);
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 0.0625rem solid var(--book-header-border-color);
+}
+
+.book-header-heading {
+    margin: 0;
+}
+
+.book-main {
+    display: grid;
+    grid-template-columns: 15.625em auto;
+    gap: 2em;
+    margin: 1.5em auto;
+    max-width: var(--breakpoint-lg);
+}
+
+@media (max-width: 64rem) {
+    .book-main {
+        margin: 1.5em;
+        grid-template-columns: 13em auto;
+    }
+}
+
+@media (max-width: 40rem) {
+    .book-main {
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 28rem) {
+    .book-main {
+        margin: 0.5em;
+    }
+}
+
+.book-main-aside {
+    text-align: right;
+}
+
+@media (max-width: 40rem) {
+    .book-main-aside {
+        text-align: center;
+    }
+}
+
+.book-main-aside-cover {
+    border-radius: 1rem;
+    display: block;
+    align-self: flex-start;
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+@media (max-width: 40rem) {
+    .book-main-aside-cover {
+        margin: 0 auto;
+    }
+}
+
+.book-main-aside-section--author {
+    border: 0.0625rem solid var(--book-main-aside-section--author-border-color);
+    border-radius: 0.75em;
+    text-align: center;
+    padding: 0.5em 0.25em;
+}
+
+.book-main-aside-section-author-heading {
+    margin: 0;
+    font-weight: 400;
+}
+
+.book-main-aside-section-author-heading-name {
+    font-weight: bold;
+}
+
+.book-main-aside-section-author-bio {
+    margin: 0;
+    margin-top: 0.5em;
+}
+
+.book-main-content-section--blurb blockquote {
+    border-left: 0.2rem solid #999;
+    margin: 0.75em 0;
+    padding: 0.2em 1.5em;
+}
+
+.book-main-content-section--blurb blockquote p {
+    margin: 0;
+}
+
+@media (max-width: 28rem) {
+    .book-main-content-section--blurb blockquote {
+        margin: 0;
+        padding: 0 0.5em;
+    }
+}
+
+.book-main-content-section-heading {
+    margin: 0;
+}
+
+.book-main-content-section-nav {
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 0.5em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.book-main-content-section-nav-item {
+    padding: 1em;
+    border: 0.0625em solid #999;
+    border-radius: 1em;
+}
+
+.book-main-content-section-nav-item-heading {
+    margin: 0;
+    margin-bottom: 0.375em;
+}
+
+.book-main-content-section-nav-item-heading-link {
+    font-weight: bold;
+    color: #0969da;
+    text-decoration: none;
+    transition: 0.1s ease-in-out;
+}
+
+.book-main-content-section-nav-item-heading-link:hover {
+    color: #531ab6;
+    text-decoration: underline;
+}
+
+.book-main-content-section-nav-item-stats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ch;
+}
+
+.book-main-content-section-nav-item-stats-item {
+    white-space: nowrap;
+    border-radius: 0.375em;
+    font-weight: bold;
+    padding: 0.2em 0.3em;
+}
+
+@media (max-width: 28rem) {
+    .book-main-content-section-nav-item-stats-item {
+        white-space: unset;
+    }
+}
+
+.book-main-content-section-nav-item-stats-item--published {
+    background-color: #0030ff;
+    color: #fff;
+}
+
+.book-main-content-section-nav-item-stats-item--lastmod {
+    background-color: #aed581;
+    color: #000;
+}
+
+.book-main-content-section-nav-item-desc {
+    margin: 0.5em 0;
+    margin-bottom: 0;
 }

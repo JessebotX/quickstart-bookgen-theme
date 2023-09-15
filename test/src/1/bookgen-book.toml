@@ -1,0 +1,48 @@
+# Title of the book
+title            = "The Adventures of John Doe"
+# A short one/two sentence description of what the book is about
+shortDescription = """
+Follow John Doe as he hitches a ride on a space sailing pirate ship and explores the universe.
+"""
+# Genre[s] the book can be categorized into
+genre            = ["Science Fiction", "Adventure"]
+# The status of the written work, whether serialization is "On Hiatus", "Ongoing", "Completed", etc.
+status           = "Completed"
+# File name of the cover (NOTE: there shouldn't be directories in this path as the cover is in the book's root directory)
+coverPath        = "cover.png"
+# Language of the book. Specify as ISO 639-1 Language code. See <https://www.w3schools.com/tags/ref_language_codes.asp> for a list of them.
+languageCode     = "en"
+# A copyright notice
+#copyright        = "Copyright John Doe" #(not necessary since it is under CC0)
+# Book's content license for copyright purposes
+license          = "CC0"
+# Other places where you can read this book
+mirrors          = ["https://anotherwebsite.com/johndoebook", "https://mirrorwebsite.net/johndoe/1"]
+
+[author]
+# Name of the author
+name = "John Doe"
+# About the author
+bio = """
+John Doe is a bestselling author, astrophysicist, astronaut, mathematician, computer scientist, biochemist, psychologist, engineer, clothing designer, and a entrepreneur known for his contributions in adventure sci-fi with his debut work \"The Adventures of John Doe\".
+"""
+
+[[author.donate]]
+# Name of the site
+name = "Patreon"
+# Link to where you can donate to the author
+link = "https://patreon.com/johndoeuser11111"
+
+[[author.donate]]
+# Name of the site
+name = "Paypal"
+# Link to where you can donate to the author
+link = "https://paypal.com/johndoeuser11111"
+
+[[author.donate]] # Supports non link items such as cryptocurrency addresses
+# Name of donation method
+name = "Bitcoin"
+# Since `nonLinkItem = true`, this is no longer treated as a link
+link = "1234567890qwertyuiopasdfghjklzxcvbnm"
+# Set to true for non-link donations
+nonLinkItem = true

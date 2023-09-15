@@ -1,0 +1,6 @@
+# HACK: manipulating the internals
+layoutDir    = "../"
+
+title        = "John Doe's Collection"
+baseURL      = "https://example.com"
+languageCode = "en"

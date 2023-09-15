@@ -1,0 +1,28 @@
+# Title of the book
+title            = "Lorem ipsum 2nd Edition"
+# A short one/two sentence description of what the book is about
+shortDescription = """
+The famous book: Lorem ipsum, now available as a new edition.
+"""
+# Genre[s] the book can be categorized into
+genre            = ["Avant-garde"]
+# The status of the written work, whether serialization is "On Hiatus", "Ongoing", "Completed", etc.
+status           = "Completed"
+# File name of the cover (NOTE: there shouldn't be directories in this path as the cover is in the book's root directory)
+#coverPath        = "cover.png" # use placeholder cover provided by theme
+# Language of the book. Specify as ISO 639-1 Language code. See <https://www.w3schools.com/tags/ref_language_codes.asp> for a list of them.
+languageCode     = "en"
+# A copyright notice
+#copyright        = "Copyright John Doe" #(not necessary since it is under CC0)
+# Book's content license for copyright purposes
+license          = "CC0"
+# Other places where you can read this book
+mirrors          = ["https://en.wikipedia.org/wiki/Lorem_ipsum", "https://simple.wikipedia.org/wiki/Lorem_ipsum"]
+
+[author]
+# Name of the author
+name = "Lorem Ipsum"
+# About the author
+bio = """
+Lorem Ipsum is the legendary author behind the creation of the \"Lorem ipsum\" dummy text
+"""

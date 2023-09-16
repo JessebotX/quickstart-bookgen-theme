@@ -1,1 +1,30 @@
-{{ .Content }}
+<!DOCTYPE html>
+<html lang="{{ .Parent.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <title>{{ .Title }} | {{ .Parent.Title }}</title>
+  </head>
+
+  <body class="chapter">
+    <header class="chapter-header">
+      <h1 class="chapter-header-heading">
+        <a href="index.html" class="chapter-header-heading-link" title="Return to Index">
+          {{ .Parent.Title }}
+        </a>
+      </h1>
+    </header>
+
+    <main class="chapter-main">
+      <article class="chapter-main-content" name="{{ .Title }}">
+        <h1 class="chapter-main-content-heading">{{ .Title }}</h1>
+
+        {{ .Content }}
+        </article>
+    </main>
+  </body>
+</html>
+

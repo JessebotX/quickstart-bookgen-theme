@@ -279,9 +279,14 @@ a:hover {
     }
 }
 
+:root {
+    --book-main-aside-section-genre-list-item-bg: #aed581;
+    --book-main-aside-section-genre-list-item-fg: #000;
+}
+
 .book-main-aside-section-genre-list-item {
-    background-color: #aed581;
-    color: #000;
+    background-color: var(--book-main-aside-section-genre-list-item-bg);
+    color: var(--book-main-aside-section-genre-list-item-fg);
     border-radius: 0.25em;
     padding: 0.2em 0.4em;
 }
@@ -302,10 +307,20 @@ a:hover {
     }
 }
 
+:root {
+    --book-main-aside-section-stats-list-item-fg: #000;
+}
+
 .book-main-aside-section-stats-item-icon {
+    fill: var(--book-main-aside-section-stats-item-fg);
     width: 1em;
     height: 1em;
     vertical-align: -.125em;
+}
+
+:root {
+    --book-main-aside-section-genre-list-item-bg: #aed581;
+    --book-main-aside-section-genre-list-item-fg: #000;
 }
 
 .book-main-content-section--blurb blockquote {
@@ -461,10 +476,17 @@ a:hover {
     }
 }
 
+:root {
+    --chapter-footer-pagination-link-border-color: #999;
+    --chapter-footer-pagination-link-bg: #fefefe;
+    --chapter-footer-pagination-link-fg: #000;
+    --chapter-footer-pagination-link-bg--hover: #eee;
+}
+
 .chapter-footer-pagination-link {
-    border: 0.0625em solid #999;
-    background-color: #fefefe;
-    color: #000;
+    border: 0.0625em solid var(--chapter-footer-pagination-link-border-color);
+    background-color: var(--chapter-footer-pagination-link-bg);
+    color: var(--chapter-footer-pagination-link-fg);
     padding: 1em;
     flex-grow: 1;
     text-decoration: none;
@@ -481,7 +503,7 @@ a:hover {
 }
 
 .chapter-footer-pagination-link:hover {
-    background-color: #eee;
+    background-color: var(--chapter-footer-pagination-link-bg--hover);
 }
 
 .chapter-footer-pagination-link-icon-wrapper {
@@ -489,8 +511,12 @@ a:hover {
     align-items: center;
 }
 
+:root {
+    --chapter-footer-pagination-link-icon-fg: #555;
+}
+
 .chapter-footer-pagination-link-icon {
-    fill: #555;
+    fill: var(--chapter-footer-pagination-link-icon-fg);
     width: 1em;
     height: 1em;
     vertical-align: -.125em;
@@ -500,10 +526,14 @@ a:hover {
     text-align: right;
 }
 
+:root {
+    --chapter-footer-pagination-link-content-label-fg: #555;
+}
+
 .chapter-footer-pagination-link-content-label {
     display: block;
     font-style: normal;
     font-weight: bold;
-    color: #555;
+    color: var(--chapter-footer-pagination-link-content-label-fg);
     font-size: 0.9em;
 }

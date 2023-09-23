@@ -1,11 +1,5 @@
 # quickstart-bookgen-theme
-Feature-packed theme for [bookgen](https://github.com/JessebotX/bookgen)
-
-## TODO
-* [ ] Light/Dark Mode toggle
-* [ ] Font toggle
-* [ ] Author donation links as a dropdown menu
-* [ ] Top main navbar
+A quickstart bookgen theme for [bookgen](https://github.com/JessebotX/bookgen)
 
 ## Usage
 If you have `git` installed, go to your collection's root directory and include this as git submodule.
